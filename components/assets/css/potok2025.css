@@ -1,0 +1,23 @@
+.potok2025 {
+	width: 200px;
+	aspect-ratio: 1;
+	object-fit: cover;
+}
+
+.vip_items {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.vip_left {
+	gap: 30px;
+}
+
+.vip_right,.vip_left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
