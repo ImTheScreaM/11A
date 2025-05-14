@@ -95,12 +95,12 @@
 	gap: 30px;
 }
 
-#title_img,#galery-image {
+#title_img,
+#galery-image {
 	width: 350px;
 	aspect-ratio: 1;
 	object-fit: cover;
 }
-
 
 #galery-image:hover {
 	transform: scale(1.1);
@@ -110,5 +110,24 @@
 @media screen and (max-width: 900px) {
 	.container_item {
 		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.gallery_img {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.persone_page-title,.left_title-page_top,.left_title-page_bottom {
+		align-items: center;
+		flex-direction: column;
+		margin: 0 auto;
+		gap: 10px;
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+		.gallery_img {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
