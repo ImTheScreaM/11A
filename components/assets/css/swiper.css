@@ -2,3 +2,15 @@
 	display: flex;
 	margin: 0 auto;
 }
+
+.swiper_second {
+	width: 600px;
+	height: auto;
+}
+
+@media screen and (max-width: 800px) {
+	.swiper_second {
+	width: 360px;
+
+}
+}

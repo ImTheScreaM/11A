@@ -1,15 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 
 import 'swiper/css'
 
+import '@/components/assets/css/swiper.css'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import '@/components/assets/css/swiper.css'
 
 import black_whiteclass from '@/components/assets/img/black_whiteclass.jpg'
 import black_whiteclass_sport from '@/components/assets/img/black_whiteclass_sport.jpg'
@@ -44,11 +42,11 @@ export const ImgSlider = () => {
 					<Image src={images[3]} alt='classes' />
 				</SwiperSlide>
 			</Swiper>
-						<Swiper
+			<Swiper
 				spaceBetween={50}
 				slidesPerView={1}
 				navigation
-				style={{ width: '600px', height: 'auto' }}
+				className='swiper_second'
 			>
 				<SwiperSlide>
 					<Image src={images[2]} alt='classes' />
