@@ -223,7 +223,7 @@ export const PEOPLE: IUser[] = [
 			progress: 'Хорошист',
 			sex: 'м',
 			about: 'Учится в физмат классе',
-			nicknames: 'Я похотливый',
+			nicknames: 'Я потоскливый',
 		},
 	},
 	{
@@ -319,7 +319,7 @@ export const PEOPLE: IUser[] = [
 		className: 'KolVeron',
 		idClass: 'id_people',
 		information: {
-			hobby: 'undefined',
+			hobby: 'Волейбол',
 			progress: 'Отличница',
 			sex: 'ж',
 			about: 'Учится в ИТ классе',

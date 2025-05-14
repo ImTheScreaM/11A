@@ -3,7 +3,6 @@
 import '@/components/assets/css/personePage.css'
 import { Header } from '@/components/pages/header'
 import { usePersoneStore } from '@/core/store/userCreate'
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
 import { use, useState } from 'react'
 
@@ -21,11 +20,12 @@ export default function userPageDetails({
 	const getUserInformation = () => {
 		const ID = userId?.usersId
 		if (!ID) return
-		return data.find((item: { id: number }):boolean => item?.id == userId.usersId)
+		return data.find(
+			(item: { id: number }): boolean => item?.id == userId.usersId
+		)
 	}
 
-	const { name, information, img, className, idClass, galery } =
-		getUserInformation()
+	const { name, information, img, galery } = getUserInformation()
 
 	if (!getUserInformation()) {
 		return <>Loading...</>
@@ -48,7 +48,7 @@ export default function userPageDetails({
 				<div className='right_title-page'>
 					<img
 						src={img.src}
-						id="title_img"
+						id='title_img'
 						style={{ minHeight: '344px', maxHeight: '344px' }}
 					/>
 				</div>
@@ -79,7 +79,7 @@ export default function userPageDetails({
 					<div className='gallery'>
 						<span style={{ fontSize: '40px' }}>Галерея</span>
 						<div className='gallery_img'>
-							{galery.map((item: string, index:number) => (
+							{galery.map((item: string, index: number) => (
 								<div key={index}>
 									<Image
 										src={item}

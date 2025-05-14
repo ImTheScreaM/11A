@@ -1,0 +1,9 @@
+.header {
+	display: flex;
+	justify-content: center;
+}
+
+.logo_img {
+	background: rgb(210, 208, 208);
+	border-radius: 30px;
+}
