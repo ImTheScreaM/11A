@@ -1,0 +1,134 @@
+/* [project]/components/assets/css/personePage.css [app-client] (css) */
+.container_persone_page {
+  flex-direction: column;
+  gap: 40px;
+  display: flex;
+}
+
+.persone_page-title {
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.persone_page-title, .left_title-page, .left_title-page_top {
+  display: flex;
+}
+
+.left_title-page, .left_title-page_top {
+  flex-direction: column;
+}
+
+.left_title-page {
+  gap: 40px;
+}
+
+.container_information {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.container_item {
+  gap: 40px;
+  display: flex;
+}
+
+.container_item li {
+  flex-direction: column;
+  margin: 10px;
+  display: flex;
+}
+
+.container_nicknames {
+  justify-content: center;
+  display: flex;
+}
+
+.nicknames {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.title_nicknames {
+  background: gray;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  padding: 5px;
+  display: flex;
+}
+
+.items_nicknames {
+  background: gray;
+  width: 40%;
+  padding: 10px;
+}
+
+#id_people {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 400px;
+}
+
+.rotate_arrow {
+  transform: rotate(180deg);
+}
+
+.hide_items {
+  display: none;
+}
+
+.container_gallery {
+  justify-content: center;
+  display: flex;
+}
+
+.gallery_img {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+  display: grid;
+}
+
+#title_img, #galery-image {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 350px;
+  overflow-y: hidden;
+}
+
+#galery-image:hover {
+  transition: all .4s;
+  transform: scale(1.1);
+}
+
+@media screen and (width <= 900px) {
+  .container_item {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width <= 800px) {
+  .gallery_img {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .persone_page-title, .left_title-page_top, .left_title-page_bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+}
+
+@media screen and (width <= 450px) {
+  .gallery_img {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/*# sourceMappingURL=components_assets_css_personePage_css_f9ee138c._.single.css.map*/

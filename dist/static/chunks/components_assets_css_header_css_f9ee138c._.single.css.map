@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/assets/css/header.css"],"sourcesContent":[".header {\r\n\tdisplay: flex;\r\n\tjustify-content: space-around;\r\n\talign-items: center;\r\n}\r\n\r\n.logo_img {\r\n\tbackground: rgb(210, 208, 208);\r\n\tborder-radius: 30px;\r\n}\r\n\r\n.header-white_toggle {\r\n\tbackground: black;\r\n\tcolor: white;\r\n}\r\n\r\n.header-dark_toggle {\r\n\tbackground: white;\r\n\tcolor: black;\r\n}\r\n\r\n.header-white_toggle, .header-dark_toggle {\r\n\twidth: 100px;\r\n\tfont-size: 15px;\r\n\tborder-radius: 15px;\r\n}"],"names":[],"mappings":"AAAA;;;;;;AAMA;;;;;AAKA;;;;;AAKA;;;;;AAKA"}}]
+}

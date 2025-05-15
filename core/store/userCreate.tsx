@@ -2,7 +2,11 @@ import { persist } from 'zustand/middleware'
 import { create } from 'zustand/react'
 import { PEOPLE } from '../api/users'
 
-export const usePersoneStore = create()(
+interface IUserStore {
+	data:object[]
+}
+
+export const usePersoneStore = create<IUserStore>()(
 	persist(
 		set => ({
 			data: PEOPLE,

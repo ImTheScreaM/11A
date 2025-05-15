@@ -12,8 +12,6 @@ export const Header = () => {
 	const setWhite = toggleTheme(state => state.setWhite)
 	const setDark = toggleTheme(state => state.setDark)
 
-	
-
 	return (
 		<header className='header'>
 			<div className='header_link'>

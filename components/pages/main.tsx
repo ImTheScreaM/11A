@@ -3,7 +3,6 @@
 import '@/components/assets/css/main.css'
 import { LeftTriger, RightTriger } from '@/core/hooks/scrollTriger'
 import { usePersoneStore } from '@/core/store/userCreate'
-import { IUser } from '@/core/types/types'
 import { ImgSlider } from '../ui/swiper/swiper'
 
 import gsap from 'gsap'
@@ -85,7 +84,7 @@ export const Main = () => {
 							Странички
 						</span>
 						<div className='container_users'>
-							{name.map((item: IUser) => (
+							{name.map((item:any) => (
 								<Link
 									href={`/users/${item.id}`}
 									key={item.id}

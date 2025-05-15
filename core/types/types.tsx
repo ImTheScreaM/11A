@@ -10,10 +10,11 @@ interface IInformation {
 
 export interface IUser {
     id: number;
-    name: string;
-    img:any;
+    name?: string;
+    img?:any;
     className?:string;
     idClass?:string;
     galery?:any[]
     information:IInformation
 }
+

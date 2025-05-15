@@ -1,7 +1,13 @@
-import { createJSONStorage, persist } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
 import { create } from 'zustand/react'
 
-export const toggleTheme = create()(
+interface IToggleTheme {
+	darkMode: boolean
+	setDark: () => void
+	setWhite: () => void
+}
+
+export const toggleTheme = create<IToggleTheme>()(
 	persist(
 		set => ({
 			darkMode: true,
@@ -13,7 +19,7 @@ export const toggleTheme = create()(
 			},
 		}),
 		{
-			name:'setTheme'
+			name: 'setTheme',
 		}
 	)
 )

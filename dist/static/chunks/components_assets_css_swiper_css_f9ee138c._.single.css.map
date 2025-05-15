@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/assets/css/swiper.css"],"sourcesContent":[".swiper_container {\r\n\tdisplay: flex;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n.swiper_second {\r\n\twidth: 600px;\r\n\theight: auto;\r\n}\r\n\r\n@media screen and (max-width: 800px) {\r\n\t.swiper_second {\r\n\twidth: 360px;\r\n\r\n}\r\n}"],"names":[],"mappings":"AAAA;;;;;AAKA;;;;;AAKA;EACC"}}]
+}

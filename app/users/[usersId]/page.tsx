@@ -8,10 +8,33 @@ import { usePersoneStore } from '@/core/store/userCreate'
 
 
 import gsap from 'gsap'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { use, useEffect, useRef, useState } from 'react'
 
-// @ts-ignore
+interface IUsePage {
+	id?:number,
+	name?:string | object | undefined,
+	information?:object | undefined,
+	img?:object | undefined,
+	galery?:object | undefined,
+	src?:string
+}
+
+interface IInformation {
+	progress?:string,
+	hobby?:string,
+	about?:string,
+	nicknames?:string
+}
+
+interface IGetUser {
+	name?:string,
+	information?:IInformation,
+	img?:StaticImageData,
+	galery?:any[]
+}
+
+// @ts-ignore 
 export default function userPageDetails({
 	params,
 }: {
@@ -33,15 +56,14 @@ export default function userPageDetails({
 		}
 	}, [])
 
-	const getUserInformation = () => {
+	function getUserInformation():IUsePage | undefined  {
 		const ID = userId?.usersId
 		if (!ID) return
-		return data.find(
-			(item: { id: number }): boolean => item?.id == userId.usersId
-		)
+		const result= data.find((item:IUsePage) => item.id == userId.usersId)
+		return result
 	}
 
-	const { name, information, img, galery } = getUserInformation()
+	const { name, information, img, galery } = getUserInformation() as IGetUser
 
 	if (!getUserInformation()) {
 		return <>Loading...</>
@@ -54,8 +76,8 @@ export default function userPageDetails({
 				<div className='persone_page-title'>
 					<div className='left_title-page'>
 						<div className='left_title-page_top'>
-							<span style={{ fontSize: '60px' }}>{name.split(' ')[0]}</span>
-							<span style={{ fontSize: '40px' }}>{name.split(' ')[1]}</span>
+							<span style={{ fontSize: '60px' }}>{name?.split(' ')[0]}</span>
+							<span style={{ fontSize: '40px' }}>{name?.split(' ')[1]}</span>
 						</div>
 						<div className='left_title-page_bottom'>
 							<span>Выпускник 11"А" класс ОГБОУ "Вейделевская СОШ"</span>
@@ -63,7 +85,7 @@ export default function userPageDetails({
 					</div>
 					<div className='right_title-page'>
 						<img
-							src={img.src}
+							src={img?.src}
 							id='title_img'
 							style={{ minHeight: '344px', maxHeight: '344px' }}
 						/>
@@ -76,15 +98,15 @@ export default function userPageDetails({
 						<ul className='container_item'>
 							<li className='item_progress'>
 								<span style={{ fontSize: '25px' }}>Успеваемость:</span>
-								<span>{information.progress}</span>
+								<span>{information?.progress}</span>
 							</li>
 							<li className='item_hobby'>
 								<span style={{ fontSize: '25px' }}>Хобби:</span>
-								<span>{information.hobby}</span>
+								<span>{information?.hobby}</span>
 							</li>
 							<li className='item_about'>
 								<span style={{ fontSize: '25px' }}>Небольшая информация:</span>
-								<span>{information.about}</span>
+								<span>{information?.about}</span>
 							</li>
 						</ul>
 					</div>
@@ -111,7 +133,7 @@ export default function userPageDetails({
 					) : null}
 				</div>
 
-				{information.nicknames ? (
+				{information?.nicknames ? (
 					<div className='container_nicknames'>
 						<div className='nicknames'>
 							<span
