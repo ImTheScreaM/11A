@@ -9,12 +9,12 @@ interface IInformation {
 
 
 export interface IUser {
-    id: number;
+    id?: number;
     name?: string;
     img?:any;
     className?:string;
     idClass?:string;
     galery?:any[]
-    information:IInformation
+    information?:IInformation
 }
 

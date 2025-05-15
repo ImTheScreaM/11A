@@ -5,12 +5,14 @@ import { LeftTriger, RightTriger } from '@/core/hooks/scrollTriger'
 import { usePersoneStore } from '@/core/store/userCreate'
 import { ImgSlider } from '../ui/swiper/swiper'
 
+import { IUser } from '@/core/types/types'
 import gsap from 'gsap'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
 export const Main = () => {
-	const name = usePersoneStore(state => state.data)
+	const name: IUser[] = usePersoneStore(state => state.data)
 	const box = useRef(null)
 
 	useEffect(() => {
@@ -26,7 +28,7 @@ export const Main = () => {
 	return (
 		<main className='container_main' style={{ overflowY: 'hidden' }}>
 			<div className='entry' ref={box}>
-				<h1>Выпускники 2025 года ОГБОУ "Вейделевская СОШ"</h1>
+				<h1>Выпускники 2025 года ОГБОУ Вейделевская СОШ</h1>
 				<h3>
 					Добро пожаловать на сайт наших выпускников! Этот ресурс создан, чтобы
 					хранить воспоминания, кто учился вместе в 2025 году в нашей родной
@@ -84,16 +86,19 @@ export const Main = () => {
 							Странички
 						</span>
 						<div className='container_users'>
-							{name.map((item:any) => (
+							{name.map(item => (
 								<Link
 									href={`/users/${item.id}`}
 									key={item.id}
 									className='item_users'
 								>
 									<div className='item_img-users'>
-										<img
+										<Image
 											src={item.img.src}
 											className='item_img-people'
+											alt='img_people'
+											width={350}
+											height={350}
 											id={item.idClass}
 										/>
 									</div>

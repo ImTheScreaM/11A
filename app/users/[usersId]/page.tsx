@@ -2,40 +2,37 @@
 
 import '@/components/assets/css/personePage.css'
 
-
 import { Header } from '@/components/pages/header'
 import { usePersoneStore } from '@/core/store/userCreate'
-
 
 import gsap from 'gsap'
 import Image, { StaticImageData } from 'next/image'
 import { use, useEffect, useRef, useState } from 'react'
 
 interface IUsePage {
-	id?:number,
-	name?:string | object | undefined,
-	information?:object | undefined,
-	img?:object | undefined,
-	galery?:object | undefined,
-	src?:string
+	id?: number
+	name?: string | object | undefined
+	information?: object | undefined
+	img?: object | undefined
+	galery?: object | undefined
+	src?: string
 }
 
 interface IInformation {
-	progress?:string,
-	hobby?:string,
-	about?:string,
-	nicknames?:string
+	progress?: string
+	hobby?: string
+	about?: string
+	nicknames?: string
 }
 
 interface IGetUser {
-	name?:string,
-	information?:IInformation,
-	img?:StaticImageData,
-	galery?:any[]
+	name?: string
+	information?: IInformation
+	img?: StaticImageData
+	galery?: []
 }
 
-// @ts-ignore 
-export default function userPageDetails({
+export default function UserPageDetails({
 	params,
 }: {
 	params: Promise<{ usersId: number }>
@@ -50,16 +47,16 @@ export default function userPageDetails({
 		if (typeof window != 'undefined') {
 			gsap.fromTo(
 				box.current,
-				{ opacity: 0, x: -150,y:-100 },
-				{ opacity: 1, x: 0,y:0, duration: 1, ease: 'power2.in' }
+				{ opacity: 0, x: -150, y: -100 },
+				{ opacity: 1, x: 0, y: 0, duration: 1, ease: 'power2.in' }
 			)
 		}
 	}, [])
 
-	function getUserInformation():IUsePage | undefined  {
+	function getUserInformation(): IUsePage | undefined {
 		const ID = userId?.usersId
 		if (!ID) return
-		const result= data.find((item:IUsePage) => item.id == userId.usersId)
+		const result = data.find((item: IUsePage) => item.id == userId.usersId)
 		return result
 	}
 
@@ -80,13 +77,16 @@ export default function userPageDetails({
 							<span style={{ fontSize: '40px' }}>{name?.split(' ')[1]}</span>
 						</div>
 						<div className='left_title-page_bottom'>
-							<span>Выпускник 11"А" класс ОГБОУ "Вейделевская СОШ"</span>
+							<span>Выпускник 11 А класс ОГБОУ Вейделевская СОШ</span>
 						</div>
 					</div>
 					<div className='right_title-page'>
-						<img
-							src={img?.src}
+						<Image
+							src={img?.src || 'null'}
 							id='title_img'
+							alt='right_page'
+							width={50}
+							height={50}
 							style={{ minHeight: '344px', maxHeight: '344px' }}
 						/>
 					</div>
