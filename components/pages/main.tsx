@@ -10,7 +10,6 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
-
 export const Main = () => {
 	const name = usePersoneStore(state => state.data)
 	const box = useRef(null)
@@ -26,9 +25,9 @@ export const Main = () => {
 	}, [])
 
 	return (
-		<main className='container_main'>
+		<main className='container_main' style={{ overflowY: 'hidden' }}>
 			<div className='entry' ref={box}>
-				<h1>Выпускники 2025 года (ОГБОУ "Вейделевская СОШ")</h1>
+				<h1>Выпускники 2025 года ОГБОУ "Вейделевская СОШ"</h1>
 				<h3>
 					Добро пожаловать на сайт наших выпускников! Этот ресурс создан, чтобы
 					хранить воспоминания, кто учился вместе в 2025 году в нашей родной
@@ -36,7 +35,6 @@ export const Main = () => {
 					страницы одноклассников.
 				</h3>
 			</div>
-
 			<RightTriger>
 				<div className='container_about_site'>
 					<div className='about_site'>
@@ -64,11 +62,15 @@ export const Main = () => {
 					</div>
 				</div>
 			</RightTriger>
-
 			<LeftTriger>
 				<div className='container_album--pictures'>
 					<div>
-						<span style={{ fontSize: '35px' }}>Фотогалерея</span>
+						<span
+							className='container_album--title'
+							style={{ fontSize: '35px' }}
+						>
+							Фотогалерея
+						</span>
 						<div className='img_container'>
 							<ImgSlider />
 						</div>
@@ -79,7 +81,9 @@ export const Main = () => {
 			<RightTriger>
 				<div className='container_class-pages'>
 					<div className='class-pages'>
-						<span style={{ fontSize: '35px' }}>Странички</span>
+						<span className='class-pages_title' style={{ fontSize: '35px' }}>
+							Странички
+						</span>
 						<div className='container_users'>
 							{name.map((item: IUser) => (
 								<Link
@@ -88,9 +92,15 @@ export const Main = () => {
 									className='item_users'
 								>
 									<div className='item_img-users'>
-										<img src={item.img.src} id={item.idClass} />
+										<img
+											src={item.img.src}
+											className='item_img-people'
+											id={item.idClass}
+										/>
 									</div>
-									<span className='name_users'>{item.name}</span>
+									<div>
+										<span className='name_users'>{item.name}</span>
+									</div>
 								</Link>
 							))}
 						</div>

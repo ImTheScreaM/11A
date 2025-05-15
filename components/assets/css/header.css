@@ -1,9 +1,26 @@
 .header {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .logo_img {
 	background: rgb(210, 208, 208);
 	border-radius: 30px;
+}
+
+.header-white_toggle {
+	background: black;
+	color: white;
+}
+
+.header-dark_toggle {
+	background: white;
+	color: black;
+}
+
+.header-white_toggle, .header-dark_toggle {
+	width: 100px;
+	font-size: 15px;
+	border-radius: 15px;
 }

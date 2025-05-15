@@ -138,6 +138,7 @@ export const PEOPLE: IUser[] = [
 			progress: 'Хорошист',
 			sex: 'м',
 			about: 'Учится в ИТ классе',
+			nicknames:'ЮТУБЧИК,КОДИТЬ'
 		},
 	},
 	{

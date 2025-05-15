@@ -1,19 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@300&display=swap');
+
 * {
-	overflow-x: hidden;
+	font-family: 'Playwrite DK Loopet', cursive;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
 }
 
 .container_main {
 	display: grid;
 	justify-content: center;
+	margin: 0 auto;
 	margin-top: 40px;
 	gap: 120px;
 	padding: 30px;
+}
+
+.header {
+	border-bottom: 2px solid grey;
+	padding-bottom: 15px;
 }
 
 .entry {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	align-items: center;
+}
+
+.container_about_site {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container_album--pictures {
+	border-top: 2px solid grey;
+	padding-top: 15px;
 }
 
 .entry h1 {
@@ -23,6 +46,15 @@
 .entry h3 {
 	flex-wrap: wrap;
 	width: 1120px;
+}
+
+.container_album--title,.class-pages_title {
+	display: flex;
+	justify-content: center;
+}
+
+.swiper_container {
+	align-items: center
 }
 
 .about_site_information {
@@ -67,6 +99,11 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 15px;
+	font-size: 20px;
+}
+
+.item_img-people {
+	overflow-y: hidden;
 }
 
 .img_people {
@@ -101,6 +138,7 @@
 	.swiper_container {
 		flex-direction: column;
 		gap: 30px;
+		align-items: center;
 	}
 
 	.img_container {
@@ -118,6 +156,7 @@
 	}
 	.swiper_container {
 		width: 360px;
+		align-items: center
 	}
 	.item_users {
 		font-size: 25px;
