@@ -6,10 +6,10 @@ export const toggleTheme = create()(
 		set => ({
 			darkMode: true,
 			setDark: () => {
-				set(state => ({ darkMode: false }))
+				set(() => ({ darkMode: false }))
 			},
 			setWhite: () => {
-				set(state => ({ darkMode: true }))
+				set(() => ({ darkMode: true }))
 			},
 		}),
 		{
